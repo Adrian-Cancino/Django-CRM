@@ -8,6 +8,7 @@ class User(AbstractUser):
 
 class Lead(models.Model):
 
+    #Model of the leads (DataBase)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     age = models.IntegerField(default=0)
@@ -20,6 +21,8 @@ class Lead(models.Model):
 
 
 class Agent(models.Model):
+
+    #Model for the Agent (DataBase)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
